@@ -4,4 +4,12 @@
 
 ### install
 
-1. ```npm install -g expo_cli```
+1. ```$ npm install -g expo_cli```
+
+### run & build
+
+1. ```$ expo start```
+
+2. ブラウザでlocalhost:19002
+
+3. エミュレータを起動(Android)
