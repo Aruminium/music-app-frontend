@@ -4,7 +4,7 @@
 
 ### install
 
-1. ```$ npm install -g expo_cli```
+1. ```$ npm install -g expo-cli```
 
 ### run & build
 
