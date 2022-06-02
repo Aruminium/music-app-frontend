@@ -10,6 +10,7 @@ const Home = ({ navigation }) => {
       navigation.navigate("Login")}/>
       <Button title="Signup" onPress={() => {navigation.navigate("Signup")}}/>
       <Button title="MyPage" onPress={() =>{navigation.navigate("MyPage")}}/> 
+      <Button title="Calendar" onPress={() => navigation.navigate("Calendar")}/>
     </View>
   );
 };
