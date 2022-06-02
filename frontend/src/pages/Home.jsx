@@ -8,6 +8,7 @@ const Home = ({ navigation }) => {
       <Text>Home画面です</Text>
       <Button title="Login" onPress={() =>
       navigation.navigate("Login")}/>
+      <Button title="Signup" onPress={() => {navigation.navigate("Signup")}}/>
     </View>
   );
 };
