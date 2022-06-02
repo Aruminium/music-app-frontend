@@ -1,3 +1,8 @@
+<img width="934" alt="スクリーンショット 2022-06-02 21 36 56" src="https://user-images.githubusercontent.com/73931800/171630740-e57b5bcf-51ff-41da-be1c-8f8581c976d3.png">
+
+<img width="609" alt="スクリーンショット 2022-06-02 21 38 39" src="https://user-images.githubusercontent.com/73931800/171630982-c36e5718-6869-4c3a-9adc-6851cb464a89.png">
+
+
 ### CDのリリース日を知らせてくれるスマホアプリ
 
 使用技術: React Native + expo
