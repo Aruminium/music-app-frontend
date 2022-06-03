@@ -39,7 +39,7 @@ const MyCalendar = () => {
 					/*Return JSX*/
 				}}
 			
-				markedDates={{{today.toLocaleDateString}:{selected:true}}}
+				// markedDates={{{today.toLocaleDateString}:{selected:true}}}
 			/>
   );
 };
