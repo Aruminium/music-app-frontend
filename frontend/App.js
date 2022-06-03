@@ -5,7 +5,7 @@ import Home from "./src/pages/Home";
 import Login from "./src/pages/Login";
 import Signup from './src/pages/Signup';
 import Mypage from "./src/pages/signed/MyPage";
-import MyCalendar from "./src/pages/signed/Calendar";
+import MyCalendar from "./src/pages/signed/MyCalendar";
 
 const Stack = createNativeStackNavigator();
 
