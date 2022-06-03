@@ -4,7 +4,9 @@ import SIGN_LOGIN from "../components/Sign_Login";
 
 const Login = () => {
 	return (
+		<View>
 			<SIGN_LOGIN/>
+		</View>
 	);
 }
 

@@ -4,13 +4,10 @@ import SIGN_LOGIN from "../components/Sign_Login";
 
 const Signup = () => {
 	return (
-		<>
-			<View>
-				<Text>サインアップ</Text>
-				<SIGN_LOGIN/>
-			</View>
-		</>
-	)
+		<View>
+			<SIGN_LOGIN/>
+		</View>
+	);
 }
 
 export default Signup;
