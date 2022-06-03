@@ -5,7 +5,7 @@ import Home from "./src/pages/Home";
 import Login from "./src/pages/Login";
 import Signup from './src/pages/Signup';
 import Mypage from "./src/pages/signed/MyPage";
-import Calendar from "./src/pages/signed/Calendar";
+import MyCalendar from "./src/pages/signed/Calendar";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +17,7 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="MyPage" component={Mypage}/>
-        <Stack.Screen name="Calendar" component={Calendar}></Stack.Screen>
+        <Stack.Screen name="MyCalendar" component={MyCalendar}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
