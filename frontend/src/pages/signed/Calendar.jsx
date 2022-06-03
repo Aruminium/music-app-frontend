@@ -1,12 +1,12 @@
 import React from "react";
 import {View, Text} from "react-native";
 
-const Login = () => {
+const Calendar = () => {
 	return (
 		<View>
-			<Text>ログイン画面</Text>
+			<Text>カレンダー画面</Text>
 		</View>
 	)
 }
 
-export default Login;
+export default Calendar;
