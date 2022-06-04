@@ -1,8 +1,10 @@
 import React from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
+import { Center, NativeBaseProvider } from "native-base";
 import MusicInfo from "../../components/MusicInfo";
 import MusicInfoList from "../../components/MusicInfoList";
 import SignedFooter from "../../components/SignedFooter";
+import AddMusic from "../../components/AddMusic";
 
 const MyPage = ({ navigation }) => {
   const datas = [
@@ -21,11 +23,25 @@ const MyPage = ({ navigation }) => {
   ];
 
   return (
-    <View>
+	<NativeBaseProvider>
+    <View style={styles.container}>
       <MusicInfoList datas={datas} />
+	  <Center px="3">
+	  <AddMusic navigation={navigation}/>
       <SignedFooter navigation={navigation}/>
+	  </Center>
     </View>
+	</NativeBaseProvider>
   );
 };
 
 export default MyPage;
+
+const styles = StyleSheet.create({
+	container: {
+	  flex: 1,
+	  backgroundColor: '#fff',
+	  alignItems: 'center',
+	  justifyContent: 'center',
+	},
+  });
