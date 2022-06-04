@@ -15,4 +15,4 @@ web-build/
 
 save_data/
 
-.env
+config.js
