@@ -14,7 +14,7 @@ const SignedFooter = ({ navigation }) => {
   return (
     <NativeBaseProvider>
       {/*mt="full"で一番下に付く*/}
-      <Box flex={1} mt="full" safeAreaTop width="100%" alignSelf="center">
+      <Box flex={1} mt="full" safeAreaTop width="100vw" maxW="1000" alignSelf="center">
         <Center flex={1}></Center>
         <HStack bg="indigo.600" alignItems="center" safeAreaBottom shadow={6}>
           <Pressable
