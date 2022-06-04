@@ -28,27 +28,32 @@ const Signup = () => {
     });
   }, [])
   return (
-    <NativeBaseProvider>
-      <FormControl >
-        <Stack space={5}>
-          <Stack>
-            <FormControl.Label>Email</FormControl.Label>
-            <Input variant="underlined" p={2} placeholder="Email"
-              onChange={(e) => {
-                setUserEmail(e.target.value);
-              }}/>
-          </Stack>
-          <Stack>
-            <FormControl.Label>Password</FormControl.Label>
-            <Input variant="underlined" p={2} placeholder="Password"
-              onChange={(e) => {
-                setUserPassword(e.target.value);
-              }}/>
-          </Stack>
-        </Stack>
-      </FormControl>
-      <Button onClick={handleSubmit}>サインアップ</Button>
-    </NativeBaseProvider>
+    <>
+      {user? (navigation.navigate("MyPage")):(
+        <NativeBaseProvider>
+          <FormControl >
+            <Stack space={5}>
+              <Stack>
+                <FormControl.Label>Email</FormControl.Label>
+                <Input variant="underlined" p={2} placeholder="Email"
+                  onChange={(e) => {
+                    setUserEmail(e.target.value);
+                  }}/>
+              </Stack>
+              <Stack>
+                <FormControl.Label>Password</FormControl.Label>
+                <Input variant="underlined" p={2} placeholder="Password"
+                  onChange={(e) => {
+                    setUserPassword(e.target.value);
+                  }}/>
+              </Stack>
+            </Stack>
+          </FormControl>
+          <Button onPress={handleSubmit}>サインアップ</Button>
+        </NativeBaseProvider>
+
+      )}
+    </>
   );
 }
 
