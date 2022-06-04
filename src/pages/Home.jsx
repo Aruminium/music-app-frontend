@@ -1,16 +1,19 @@
 import React from "react";
-import { StyleSheet, Text, View , Button} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import {Button, NativeBaseProvider,Center} from "native-base";
 
 const Home = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <Text>Home画面です</Text>
-      <Button title="Login" onPress={() =>
-      navigation.navigate("Login")}/>
-      <Button title="Signup" onPress={() => {navigation.navigate("Signup")}}/>
-      <Button title="MyPage" onPress={() =>{navigation.navigate("MyPage")}}/> 
-      <Button title="MyCalendar" onPress={() => navigation.navigate("MyCalendar")}/>
-    </View>
+    <NativeBaseProvider>
+      <View style={styles.container}>
+        <Text>スマートな音楽ライフを</Text>
+        <Button onPress={() =>navigation.navigate("Login")}>ログイン</Button>
+        <Button onPress={() => {navigation.navigate("Signup")}}>サインアップ</Button>
+        <Button onPress={() =>{navigation.navigate("MyPage")}}> マイページ</Button>
+        <Button onPress={() => navigation.navigate("MyCalendar")}>カレンダー</Button>
+        <View style={styles.footer}><Text>©スパゲッティコーダーズ</Text></View>
+      </View>
+    </NativeBaseProvider>
   );
 };
 
@@ -21,6 +24,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  footer:{
+    flex:1,
+    backgroundColor: '#89c7de',
+    color: '#fff',
+    textAlign: 'center',
+    padding: 20,
+
+    position: 'absolute',
+    bottom: 0 
+  }
 });
 
 export default Home;
