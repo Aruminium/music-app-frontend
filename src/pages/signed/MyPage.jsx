@@ -2,8 +2,9 @@ import React from "react";
 import { View } from "react-native";
 import MusicInfo from "../../components/MusicInfo";
 import MusicInfoList from "../../components/MusicInfoList";
+import SignedFooter from "../../components/SignedFooter";
 
-const MyPage = () => {
+const MyPage = ({ navigation }) => {
   const datas = [
     {
       artistName: "米酢",
@@ -12,9 +13,9 @@ const MyPage = () => {
       id: 1,
     },
     {
-      artistName: "検事",
-      albumName: "ピーポーサイン",
-      ReleaseDate: "2022-06-10",
+      artistName: "アイウエオ",
+      albumName: "わわわわわ",
+      ReleaseDate: "2022-06-28",
       id: 2,
     },
   ];
@@ -22,6 +23,7 @@ const MyPage = () => {
   return (
     <View>
       <MusicInfoList datas={datas} />
+      <SignedFooter navigation={navigation}/>
     </View>
   );
 };
