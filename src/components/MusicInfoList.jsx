@@ -2,9 +2,10 @@ import React from "react";
 import MusicInfo from "./MusicInfo";
 
 const MusicInfoList = ({ datas }) => {
-  return datas.map((data) => (
+  return datas.map((data, index) => (
+
     <MusicInfo
-      h="140"
+      h= {index===0 ? 0 : 140}
       artistName={data.artistName}
       albumName={data.albumName}
       releaseDate={data.releaseDate}

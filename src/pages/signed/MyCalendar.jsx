@@ -5,6 +5,7 @@ import { Box, NativeBaseProvider } from "native-base";
 import Icon from "react-native-vector-icons/Ionicons";
 import MusicInfo from "../../components/MusicInfo";
 import SignedFooter from "../../components/SignedFooter";
+import MusicInfoList from "../../components/MusicInfoList";
 
 const MyCalendar = () => {
   const today = new Date();
@@ -16,13 +17,34 @@ const MyCalendar = () => {
     [selectedDate]: { selected: true, selectedColor: "#3F51B5" },
   };
 
+  const datas = [
+    {
+      artistName: "米酢",
+      albumName: "みかん",
+      ReleaseDate: "2022-06-10",
+      id: 1,
+    },
+    {
+      artistName: "アイウエオ",
+      albumName: "わわわわわ",
+      ReleaseDate: "2022-06-28",
+      id: 2,
+    },
+    {
+      artistName: "検事",
+      albumName: "ピーポーサイン",
+      ReleaseDate: "2022-06-15",
+      id: 3,
+    },
+  ];
+
   return (
     <NativeBaseProvider>
       <Calendar
         current={today.dateString}
         minDate={halfYearAgo.toISOString().toString()}
         maxDate={halfYearAfter.toISOString().toString()}
-        onDayPress = {(day) => {
+        onDayPress={(day) => {
           setSelectedDate(day.dateString);
           // todo : MusicInfoListに渡す引数を変える処理
         }}
@@ -49,7 +71,6 @@ const MyCalendar = () => {
         enableSwipeMonths={true}
         onPressArrowLeft={(subtractMonth) => subtractMonth()}
         onPressArrowRight={(addMonth) => addMonth()}
-        
         disableAllTouchEventsForDisabledDays={true}
         markedDates={_markedDates}
         theme={{
@@ -64,8 +85,7 @@ const MyCalendar = () => {
         }}
       />
 
-      <MusicInfo h="0" />
-      <MusicInfo h="150" />
+      <MusicInfoList datas={datas.filter((data)=> data.ReleaseDate === selectedDate)} />
       <SignedFooter />
     </NativeBaseProvider>
   );
