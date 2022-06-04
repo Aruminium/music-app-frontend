@@ -10,13 +10,13 @@ import {
   Icon,
   Stack,
 } from "native-base";
-import { style } from "@mui/system";
+// import { style } from "@mui/system";
 import MusicInfoItem from "./MusicInfoItem";
 
-const MusicInfo = () => {
+const MusicInfo = ({h = 0, artistName = "ArtistName", albumName = "AlbumName", releaseDate = "ReleaseDate"}) => {
   return (
     <NativeBaseProvider>
-      <Center h="96">
+      <Center h={h}>
         <ZStack alignItems="center">
           {/*背景*/}
           <VStack space={0} alignItems="center">
@@ -35,9 +35,9 @@ const MusicInfo = () => {
             {/*3つの長方形*/}
             <Box mb="5" mr="10">
               <VStack space={10} alignItems="center">
-                <MusicInfoItem text={"AlbumName"} mr="100" ml="20"/>
-                <MusicInfoItem text={"ArtistName"} mr="100" ml="20"/>
-                <MusicInfoItem text={"ReleaseDate"} mr="100" ml="20"/>
+                <MusicInfoItem text={albumName} mr="100" ml="20"/>
+                <MusicInfoItem text={artistName} mr="100" ml="20"/>
+                <MusicInfoItem text={releaseDate} mr="100" ml="20"/>
               </VStack>
             </Box>
           </HStack>
