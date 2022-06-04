@@ -3,6 +3,7 @@ import { View, Tex, StyleSheet } from "react-native";
 import { Calendar, CalendarList, Agenda } from "react-native-calendars";
 import { Box, NativeBaseProvider } from "native-base";
 import Icon from "react-native-vector-icons/Ionicons";
+import MusicInfo from "../../components/MusicInfo";
 
 const MyCalendar = () => {
   const today = new Date();
@@ -64,7 +65,10 @@ const MyCalendar = () => {
         }}
       />
 
-      {/* <CardsArea/ cards={cards}> */}
+      <MusicInfo h="0"/>
+      <MusicInfo h="0"/>
+      <MusicInfo h="0"/>
+
     </NativeBaseProvider>
   );
 };
