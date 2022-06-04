@@ -5,19 +5,18 @@ import {Button, NativeBaseProvider,Center, HStack} from "native-base";
 const Home = ({ navigation }) => {
   return (
     <NativeBaseProvider>
-      
       <View style={styles.container}>
         <Text style={{textAlign:'center',fontSize:30}}>スマートミュージックライフ</Text>
         <Button onPress={() =>navigation.navigate("Login")}>ログイン</Button>
         <View style={styles.space} />
         <Button onPress={() => {navigation.navigate("Signup")}}>サインアップ</Button>
-        {/* <View style={styles.space} />
+        <View style={styles.space} />
         <Button onPress={() =>{navigation.navigate("MyPage")}}> マイページ</Button>
         <View style={styles.space} />
         <Button onPress={() => navigation.navigate("MyCalendar")}>カレンダー</Button>
-        <View style={styles.space} /> */}
+        <View style={styles.space} />
+        <Button onPress={() => navigation.navigate("Insert")}>探す</Button>
         <View style={styles.footer}><Text>©スパゲッティコーダーズ</Text></View>
-       
       </View>
       
     </NativeBaseProvider>
