@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Calendar, CalendarList, Agenda } from "react-native-calendars";
 import { Box, NativeBaseProvider } from "native-base";
@@ -7,18 +7,12 @@ import MusicInfo from "../../components/MusicInfo";
 import SignedFooter from "../../components/SignedFooter";
 import MusicInfoList from "../../components/MusicInfoList";
 
-const MyCalendar = () => {
+const MyCalendar = ({ navigation }) => {
   const today = new Date();
   const halfYearAgo = new Date(today.getFullYear(), today.getMonth() - 6, 2);
   const halfYearAfter = new Date(today.getFullYear(), today.getMonth() + 6, 0);
 
   const [selectedDate, setSelectedDate] = useState(today.dateString);
-  const _markedDates = {
-    [selectedDate]: { selected: true, selectedColor: "#3F51B5" },
-    [datas.forEach((data) => {
-      Object.keys(data).filter((key) => key === "releaseDate");
-    })]: { marked: true },
-  };
 
   const datas = [
     {
@@ -43,9 +37,51 @@ const MyCalendar = () => {
       artistName: "ジャイアン",
       albumName: "オレはジャイアン",
       releaseDate: "2022-06-04",
-      id: 3,
+      id: 4,
     },
   ];
+
+
+  // let _markedDates = {
+  //   [selectedDate]: { selected: true, selectedColor: "#3F51B5"},
+  // }
+
+  // 初期は選択したら青くなる処理 -> useEffectでリリース日が赤くなる処理
+  const [_markedDates, set_markedDates] = useState({
+    [selectedDate]: { selected: true, selectedColor: "#3F51B5" },
+  });
+
+  // 試行錯誤のやつ【赤くなる処理と青くする処理を合体させようとした】
+  // const [dateMarked, setDateMarked] = useState(() => {
+  //   const releaseDates = datas.map((data) => data.releaseDate);
+  //   // リリース日の配列をobjに変換
+  //   const obj = { ...releaseDates };
+  //   // const array = {...Object.entries(obj).map((arr) => {arr[1] , {marked: true}})}
+  //   // .map((value) => key[0] = {[selectedDate]: { selected: true, selectedColor: "#3F51B5"}})
+
+  //   Object.fromEntries(
+  //     Object.entries(obj).map(function (value) {
+  //       return [value[1], { marked: true, dotColor: "red" }];
+  //     })
+  //   );
+  // });
+
+  useEffect(() => {
+    const releaseDates = datas.map((data) => data.releaseDate);
+    // リリース日の配列をobjに変換
+    const obj = { ...releaseDates };
+    // const array = {...Object.entries(obj).map((arr) => {arr[1] , {marked: true}})}
+    // .map((value) => key[0] = {[selectedDate]: { selected: true, selectedColor: "#3F51B5"}})
+
+    const markedDates = Object.fromEntries(
+      Object.entries(obj).map(function (value) {
+        return [value[1], { marked: true, dotColor: "red" }];
+      })
+    );
+
+    set_markedDates(markedDates);
+  });
+
 
   return (
     <NativeBaseProvider>
@@ -55,7 +91,7 @@ const MyCalendar = () => {
         maxDate={halfYearAfter.toISOString().toString()}
         onDayPress={(day) => {
           setSelectedDate(day.dateString);
-          // todo : MusicInfoListに渡す引数を変える処理
+          console.log(day);
         }}
         // onDayLongPress={(day) => {
         //   console.log("selected day", day);
@@ -97,7 +133,7 @@ const MyCalendar = () => {
       <MusicInfoList
         datas={datas.filter((data) => data.releaseDate === selectedDate)}
       />
-      <SignedFooter />
+      <SignedFooter navigation={navigation} />
     </NativeBaseProvider>
   );
 };

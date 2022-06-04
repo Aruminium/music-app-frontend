@@ -13,7 +13,7 @@ import {
 // import { style } from "@mui/system";
 import MusicInfoItem from "./MusicInfoItem";
 
-const MusicInfo = ({h = 0, artistName = "ArtistName", albumName = "AlbumName", releaseDate = "ReleaseDate"}) => {
+const MusicInfo = ({h = 180, artistName = "ArtistName", albumName = "AlbumName", releaseDate = "ReleaseDate", imageUrl = "https://placehold.jp/200x200.jpg"}) => {
   return (
     <NativeBaseProvider>
       <Center h={h}>
@@ -26,7 +26,7 @@ const MusicInfo = ({h = 0, artistName = "ArtistName", albumName = "AlbumName", r
             {/* アルバム画像 */}
             <Box mt="4" mr="27" ml="39">
               <Image
-                source={{ uri: "https://placehold.jp/200x200.jpg" }}
+                source={{ uri: imageUrl }}
                 alt="jacket image"
                 rounded="md"
                 style={{ width: 100, height: 100 }}
