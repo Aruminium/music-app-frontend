@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 import {Box, IconButton, NativeBaseProvider} from "native-base";
 import Icon from "react-native-vector-icons/AntDesign";
 
-const AddMusic = (navigation) => {
+const AddMusic = ({navigation}) => {
 	return (
         <NativeBaseProvider>
         <Box style={styles.add} alignItems="center">
@@ -12,7 +12,7 @@ const AddMusic = (navigation) => {
                     borderRadius="full"
                     _hover={{bg: "indigo.600:alpha.20"}}
                     _pressed={{bg: "indigo.600:alpha.60"}}
-                    onPress={() => navigation.navigate("Calendar")}/>
+                    onPress={() => navigation.navigate("Insert")}/>
         </Box>
         </NativeBaseProvider>
 	)
