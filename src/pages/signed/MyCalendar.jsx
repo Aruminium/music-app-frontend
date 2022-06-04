@@ -15,25 +15,34 @@ const MyCalendar = () => {
   const [selectedDate, setSelectedDate] = useState(today.dateString);
   const _markedDates = {
     [selectedDate]: { selected: true, selectedColor: "#3F51B5" },
+    [datas.forEach((data) => {
+      Object.keys(data).filter((key) => key === "releaseDate");
+    })]: { marked: true },
   };
 
   const datas = [
     {
       artistName: "米酢",
       albumName: "みかん",
-      ReleaseDate: "2022-06-10",
+      releaseDate: "2022-06-10",
       id: 1,
     },
     {
       artistName: "アイウエオ",
       albumName: "わわわわわ",
-      ReleaseDate: "2022-06-28",
+      releaseDate: "2022-06-28",
       id: 2,
     },
     {
       artistName: "検事",
       albumName: "ピーポーサイン",
-      ReleaseDate: "2022-06-15",
+      releaseDate: "2022-06-15",
+      id: 3,
+    },
+    {
+      artistName: "ジャイアン",
+      albumName: "オレはジャイアン",
+      releaseDate: "2022-06-04",
       id: 3,
     },
   ];
@@ -85,7 +94,9 @@ const MyCalendar = () => {
         }}
       />
 
-      <MusicInfoList datas={datas.filter((data)=> data.ReleaseDate === selectedDate)} />
+      <MusicInfoList
+        datas={datas.filter((data) => data.releaseDate === selectedDate)}
+      />
       <SignedFooter />
     </NativeBaseProvider>
   );
