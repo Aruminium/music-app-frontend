@@ -7,7 +7,7 @@ import MusicInfo from "../../components/MusicInfo";
 import SignedFooter from "../../components/SignedFooter";
 import MusicInfoList from "../../components/MusicInfoList";
 
-const MyCalendar = () => {
+const MyCalendar = ({navigation}) => {
   const today = new Date();
   const halfYearAgo = new Date(today.getFullYear(), today.getMonth() - 6, 2);
   const halfYearAfter = new Date(today.getFullYear(), today.getMonth() + 6, 0);
@@ -86,7 +86,7 @@ const MyCalendar = () => {
       />
 
       <MusicInfoList datas={datas.filter((data)=> data.ReleaseDate === selectedDate)} />
-      <SignedFooter />
+      <SignedFooter navigation={navigation}/>
     </NativeBaseProvider>
   );
 };
