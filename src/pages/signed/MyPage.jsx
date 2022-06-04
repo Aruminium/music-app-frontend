@@ -1,13 +1,13 @@
 import React from "react";
-import {View, Text} from "react-native";
-import MUSICINFO from "../../components/MusicInfo";
+import { View } from "react-native";
+import MusicInfo from "../../components/MusicInfo";
 
-const Login = () => {
-	return (
-		<View>
-			<MUSICINFO/>
-		</View>
-	)
-}
+const MyPage = () => {
+  return (
+    <View>
+      <MusicInfo/>
+    </View>
+  );
+};
 
-export default Login;
+export default MyPage;
