@@ -4,8 +4,7 @@ import { ListItem, Box, ScrollView, Heading, FlatList, Pressable, HStack, VStack
 import { Image } from "react-native";
 import MusicInfoItem from "./MusicInfoItem";
 
-const MusicInfoList = ({ datas, text = "hoge" }) => {
-
+const MusicInfoList = ({datas, text = "hoge"}) => {
   return (
     <Box
       _dark={{
@@ -26,17 +25,16 @@ const MusicInfoList = ({ datas, text = "hoge" }) => {
       <FlatList
         data={datas}
         renderItem={
-          ({item}) => 
+          ({item}) =>
           <MusicInfo
-            artistName={item.artistName}
-            albumName={item.albumName}
-            releaseDate={item.releaseDate}
-            key={item.id}
+            artistName={item[0]}
+            title={item[1]}
+            releaseDate={item[2]}
+            imageUrl={item[3]}
           />
-          
         }
-        keyExtractor={datas.id}
-      ></FlatList>
+          keyExtractor={datas.id}
+        ></FlatList>
     </Box>
   );
 };
