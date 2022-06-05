@@ -81,7 +81,7 @@ const MyCalendar = ({ navigation }) => {
     );
 
     set_markedDates(markedDates);
-  });
+  },[]);
 
 
   return (
@@ -138,7 +138,7 @@ const MyCalendar = ({ navigation }) => {
         <MusicInfoList
           datas={datas.filter((data) => data.releaseDate === selectedDate)}
         />
-        <AddMusic/>
+        <AddMusic navigation={navigation}/>
         <Center px="3" flex={2}>
         <SignedFooter navigation={navigation} />
         </Center>
