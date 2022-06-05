@@ -123,11 +123,11 @@ const MyCalendar = ({ navigation }) => {
           theme={{
             "stylesheet.calendar.header": {
               dayTextAtIndex0: {
-                width:'15vw',
+                // width:'15vw',
                 color: "#EF5350",
               },
               dayTextAtIndex6: {
-                width:'15vw',
+                // width:'15vw',
                 color: "#5C6BC0",
               },
             },
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width:'100vw',
     backgroundColor: '#fff',
-    alignItems: 'center',
+    // alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 })
