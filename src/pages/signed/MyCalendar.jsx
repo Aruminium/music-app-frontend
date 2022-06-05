@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Calendar, CalendarList, Agenda } from "react-native-calendars";
-import { Box, NativeBaseProvider } from "native-base";
+import { Box, NativeBaseProvider,Center } from "native-base";
 import Icon from "react-native-vector-icons/Ionicons";
 import MusicInfo from "../../components/MusicInfo";
 import SignedFooter from "../../components/SignedFooter";
@@ -85,57 +85,74 @@ const MyCalendar = ({ navigation }) => {
 
   return (
     <NativeBaseProvider>
-      <Calendar
-        current={today.dateString}
-        minDate={halfYearAgo.toISOString().toString()}
-        maxDate={halfYearAfter.toISOString().toString()}
-        onDayPress={(day) => {
-          setSelectedDate(day.dateString);
-          console.log(day);
-        }}
-        // onDayLongPress={(day) => {
-        //   console.log("selected day", day);
-        // }}
+      <View style={styles.container}>
+        <Calendar
+          current={today.dateString}
+          minDate={halfYearAgo.toISOString().toString()}
+          maxDate={halfYearAfter.toISOString().toString()}
+          onDayPress={(day) => {
+            setSelectedDate(day.dateString);
+            console.log(day);
+          }}
+          // onDayLongPress={(day) => {
+          //   console.log("selected day", day);
+          // }}
 
-        monthFormat={today.getMonth > 9 ? "MM月" : "M月"}
-        onMonthChange={(month) => {
-          console.log("month changed", month);
-        }}
-        renderArrow={(direction) =>
-          direction === "left" ? (
-            <Icon name="arrow-back-circle-outline" size="300" color="#3F51B5" />
-          ) : (
-            <Icon
-              name="arrow-forward-circle-outline"
-              size="300"
-              color="#3F51B5"
-            />
-          )
-        }
-        firstDay={7}
-        enableSwipeMonths={true}
-        onPressArrowLeft={(subtractMonth) => subtractMonth()}
-        onPressArrowRight={(addMonth) => addMonth()}
-        disableAllTouchEventsForDisabledDays={true}
-        markedDates={_markedDates}
-        theme={{
-          "stylesheet.calendar.header": {
-            dayTextAtIndex0: {
-              color: "#EF5350",
+          monthFormat={today.getMonth > 9 ? "MM月" : "M月"}
+          onMonthChange={(month) => {
+            console.log("month changed", month);
+          }}
+          renderArrow={(direction) =>
+            direction === "left" ? (
+              <Icon name="arrow-back-circle-outline" size="300" color="#3F51B5" />
+            ) : (
+              <Icon
+                name="arrow-forward-circle-outline"
+                size="300"
+                color="#3F51B5"
+              />
+            )
+          }
+          firstDay={7}
+          enableSwipeMonths={true}
+          onPressArrowLeft={(subtractMonth) => subtractMonth()}
+          onPressArrowRight={(addMonth) => addMonth()}
+          disableAllTouchEventsForDisabledDays={true}
+          markedDates={_markedDates}
+          theme={{
+            "stylesheet.calendar.header": {
+              dayTextAtIndex0: {
+                width:'15vw',
+                color: "#EF5350",
+              },
+              dayTextAtIndex6: {
+                width:'15vw',
+                color: "#5C6BC0",
+              },
             },
-            dayTextAtIndex6: {
-              color: "#5C6BC0",
-            },
-          },
-        }}
-      />
+          }}
+        />
+      
 
-      <MusicInfoList
-        datas={datas.filter((data) => data.releaseDate === selectedDate)}
-      />
-      <SignedFooter navigation={navigation} />
+        <MusicInfoList
+          datas={datas.filter((data) => data.releaseDate === selectedDate)}
+        />
+        <Center px="3" flex={2}>
+        <SignedFooter navigation={navigation} />
+        </Center>
+      </View>
     </NativeBaseProvider>
   );
 };
 
 export default MyCalendar;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width:'100vw',
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+})

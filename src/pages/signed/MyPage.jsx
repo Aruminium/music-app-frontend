@@ -26,7 +26,7 @@ const MyPage = ({ navigation }) => {
 	<NativeBaseProvider>
     <View style={styles.container}>
       <MusicInfoList datas={datas} />
-	  <Center px="3">
+	  <Center px="3" flex={2}>
 	  <AddMusic navigation={navigation}/>
       <SignedFooter navigation={navigation}/>
 	  </Center>
