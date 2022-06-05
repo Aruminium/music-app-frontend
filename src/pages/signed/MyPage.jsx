@@ -1,9 +1,6 @@
 import React from "react";
-import { View, StyleSheet,Image } from "react-native";
-import {
-  Center,
-  NativeBaseProvider,
-} from "native-base";
+import { View, StyleSheet, Image } from "react-native";
+import { Center, NativeBaseProvider } from "native-base";
 import MusicInfoList from "../../components/MusicInfoList";
 import SignedFooter from "../../components/SignedFooter";
 import AddMusic from "../../components/AddMusic";
@@ -40,8 +37,9 @@ const MyPage = ({ navigation }) => {
     <NativeBaseProvider>
       <View style={styles.container}>
         <MusicInfoList datas={datas} />
+
+        <AddMusic navigation={navigation} />
         <Center px="3" flex={2}>
-          <AddMusic navigation={navigation} />
           <SignedFooter navigation={navigation} />
         </Center>
       </View>
