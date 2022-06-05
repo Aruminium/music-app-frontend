@@ -6,6 +6,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import MusicInfo from "../../components/MusicInfo";
 import SignedFooter from "../../components/SignedFooter";
 import MusicInfoList from "../../components/MusicInfoList";
+import AddMusic from "../../components/AddMusic"
 
 const MyCalendar = ({ navigation }) => {
   const today = new Date();
@@ -137,6 +138,7 @@ const MyCalendar = ({ navigation }) => {
         <MusicInfoList
           datas={datas.filter((data) => data.releaseDate === selectedDate)}
         />
+        <AddMusic/>
         <Center px="3" flex={2}>
         <SignedFooter navigation={navigation} />
         </Center>
