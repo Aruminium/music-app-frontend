@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Image, View, Text} from "react-native";
+import { StyleSheet, Image, View, Text, Button } from "react-native";
 import {
   Center,
   VStack,
@@ -18,7 +18,7 @@ import MusicInfoItem from "./MusicInfoItem";
 const MusicInfo = ({
   // h = 180,
   artistName = "ArtistName",
-  albumName = "AlbumName",
+  title = "AlbumName",
   releaseDate = "ReleaseDate",
   imageUrl = "https://placehold.jp/200x200.jpg",
 }) => {
@@ -73,7 +73,7 @@ const MusicInfo = ({
             <VStack space={2}>
 
               <MusicInfoItem text={artistName}/>
-              <MusicInfoItem text={albumName}/>
+              <MusicInfoItem text={title}/>
               <MusicInfoItem text={releaseDate}/>
               
             </VStack>
